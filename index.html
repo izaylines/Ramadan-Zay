@@ -6,7 +6,6 @@
 <title>الأعمال اليومية لشهر رمضان</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
-
 :root {
   --primary-color: #3a7765;
   --secondary-color: #f8c687;
@@ -15,26 +14,22 @@
   --border-color: #d4c8b4;
   --success-color: #5cb85c;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Tajawal', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
 }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
-
 header {
   text-align: center;
   padding: 30px 0;
@@ -46,7 +41,6 @@ header {
   position: relative;
   overflow: hidden;
 }
-
 header::before {
   content: '';
   position: absolute;
@@ -57,17 +51,14 @@ header::before {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M11 0l5 20H6L0 0h11zm0 80l5-20H6L0 80h11zm63 0l5-20h-10l-5 20h10zm0-80l5 20h-10L64 0h10zm-30 0v20h10L49 0h-5zm0 80v-20h10l-5 20h-5zM32 0v20h-10l5-20h5zm0 80v-20h-10l5 20h5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   opacity: 0.2;
 }
-
 header h1 {
   font-size: 32px;
   margin-bottom: 10px;
 }
-
 header p {
   font-size: 18px;
   opacity: 0.9;
 }
-
 .date-display {
   background-color: white;
   border-radius: 10px;
@@ -78,12 +69,10 @@ header p {
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
-
 .date-display h2 {
   font-size: 22px;
   color: var(--primary-color);
 }
-
 .date-controls button {
   background-color: var(--primary-color);
   color: white;
@@ -95,17 +84,14 @@ header p {
   margin-right: 5px;
   transition: background-color 0.3s;
 }
-
 .date-controls button:hover {
   background-color: #2c5a4c;
 }
-
 .sections {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
-
 .section {
   background-color: white;
   border-radius: 10px;
@@ -114,12 +100,10 @@ header p {
   border-right: 4px solid var(--primary-color);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .section:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
-
 .section h3 {
   color: var(--primary-color);
   margin-bottom: 15px;
@@ -127,24 +111,12 @@ header p {
   align-items: center;
   font-size: 20px;
 }
-
 .section h3 svg {
   margin-left: 10px;
 }
-
-.section-divider {
-  background-color: var(--secondary-color);
-  opacity: 0.3;
-  height: 2px;
-  width: 100%;
-  margin: 10px 0;
-  border-radius: 1px;
-}
-
 .section-content {
   padding-top: 10px;
 }
-
 .task {
   display: flex;
   align-items: center;
@@ -152,13 +124,11 @@ header p {
   padding-bottom: 10px;
   border-bottom: 1px solid #f0f0f0;
 }
-
 .task:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: none;
 }
-
 .task input[type="checkbox"] {
   margin-left: 10px;
   width: 20px;
@@ -166,19 +136,16 @@ header p {
   accent-color: var(--primary-color);
   cursor: pointer;
 }
-
 .task label {
   font-size: 16px;
   cursor: pointer;
   flex-grow: 1;
   transition: color 0.3s;
 }
-
 .task input[type="checkbox"]:checked + label {
   text-decoration: line-through;
   color: #888;
 }
-
 .progress-container {
   background-color: white;
   border-radius: 10px;
@@ -186,13 +153,11 @@ header p {
   margin-top: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
-
 .progress-container h2 {
   color: var(--primary-color);
   margin-bottom: 15px;
   text-align: center;
 }
-
 .progress-bar {
   height: 20px;
   background-color: #f0f0f0;
@@ -200,19 +165,16 @@ header p {
   overflow: hidden;
   margin-bottom: 10px;
 }
-
 .progress {
   height: 100%;
   background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   width: 0%;
   transition: width 0.5s ease;
 }
-
 .progress-text {
   text-align: center;
   font-weight: 500;
 }
-
 footer {
   text-align: center;
   margin-top: 50px;
@@ -220,7 +182,6 @@ footer {
   color: #888;
   border-top: 1px solid var(--border-color);
 }
-
 .final-message {
   text-align: center;
   margin-top: 30px;
@@ -231,12 +192,46 @@ footer {
   background-color: rgba(248, 198, 135, 0.2);
   border-radius: 10px;
 }
-
+@media (max-width: 768px) {
+  .sections {
+    grid-template-columns: 1fr;
+  }
+  header h1 {
+    font-size: 24px;
+  }
+  .date-display {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 .icon {
   color: var(--primary-color);
   margin-left: 8px;
 }
-
+.section-divider {
+  background-color: var(--secondary-color);
+  opacity: 0.3;
+  height: 2px;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 1px;
+}
+.decoration {
+  position: absolute;
+  opacity: 0.1;
+}
+.decoration-1 {
+  top: 20px;
+  right: 20px;
+  font-size: 60px;
+  transform: rotate(10deg);
+}
+.decoration-2 {
+  bottom: 20px;
+  left: 20px;
+  font-size: 40px;
+  transform: rotate(-5deg);
+}
 .ramadan-counter {
   position: absolute;
   top: 20px;
@@ -248,7 +243,11 @@ footer {
   border-radius: 20px;
   font-size: 14px;
 }
-
+.lantern {
+  display: inline-block;
+  margin: 0 20px;
+  opacity: 0.7;
+}
 .quote-container {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -256,27 +255,12 @@ footer {
   margin-top: 15px;
   font-style: italic;
 }
-
-@media (max-width: 768px) {
-  .sections {
-    grid-template-columns: 1fr;
-  }
-  
-  header h1 {
-    font-size: 24px;
-  }
-  
-  .date-display {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
 </style>
 </head>
 <body>
 <div class="container">
   <header>
-    <div class="ramadan-counter" id="ramadanDay">30 شعبان</div>
+    <div class="ramadan-counter" id="ramadanDay">يوم 1 من رمضان</div>
     <span class="decoration decoration-1">☪</span>
     <span class="decoration decoration-2">☪</span>
     <h1>الأعمال اليومية لشهر رمضان</h1>
@@ -285,16 +269,14 @@ footer {
       <p id="dailyQuote">قال الإمام الصادق عليه السلام: (للصائم فرحتان فرحة عند إفطاره وفرحة عند لقاء ربه)</p>
     </div>
   </header>
-
   <div class="date-display">
-    <h2 id="currentDateDisplay">اليوم: 30 شعبان</h2>
+    <h2 id="currentDateDisplay">الأحد: 1 رمضان</h2>
     <div class="date-controls">
       <button id="previousDay">اليوم السابق</button>
       <button id="nextDay">اليوم التالي</button>
       <button id="today">اليوم</button>
     </div>
   </div>
-
   <div class="sections">
     <!-- القسم الأول: الأعمال النهارية -->
     <div class="section">
@@ -334,7 +316,6 @@ footer {
         </div>
       </div>
     </div>
-
     <!-- القسم الثاني: أعمال الليل -->
     <div class="section">
       <h3>
@@ -357,7 +338,6 @@ footer {
         </div>
       </div>
     </div>
-
     <!-- القسم الثالث: أعمال السحر -->
     <div class="section">
       <h3>
@@ -384,7 +364,6 @@ footer {
         </div>
       </div>
     </div>
-
     <!-- القسم الرابع: الزيارات -->
     <div class="section">
       <h3>
@@ -400,19 +379,16 @@ footer {
       </div>
     </div>
   </div>
-
   <div class="progress-container">
     <h2>مستوى الإنجاز اليومي</h2>
     <div class="progress-bar">
       <div class="progress" id="progressBar"></div>
     </div>
-    <p class="progress-text" id="progressText">0% - 0 من 15 مهمة مكتملة</p>
+    <p class="progress-text" id="progressText">0%</p>
   </div>
-
   <div class="final-message">
     تقبل الله منكم صالح الاعمال ورزقكم شفاعة محمد وآل محمد
   </div>
-
   <footer>
     <p>بُنِي هذا الموْقِع كوسِيلة للمُساعدة في تنْظِيم الأعْمال اليوْمِية في شهْر رمضان المُبارك</p>
     <div>
@@ -422,9 +398,8 @@ footer {
     </div>
   </footer>
 </div>
-
 <script>
-// تحديث اقتباس اليوم
+// اقتباسات رمضانية
 const ramadanQuotes = [
   "قال الإمام الصادق عليه السلام: (للصائم فرحتان فرحة عند إفطاره وفرحة عند لقاء ربه)",
   "من صام رمضان إيمانا واحتسابا، غُفِر له ما تقدم من ذنبه",
@@ -433,6 +408,73 @@ const ramadanQuotes = [
   "في رمضان تفتح أبواب الجنة وتغلق أبواب النار وتصفد الشياطين",
   "دعوة الصائم لا ترد"
 ];
+
+// أيام الأسبوع بالعربية
+const arabicDays = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+
+// تاريخ بداية رمضان (نحدده على أنه اليوم)
+let ramadanStart = new Date();
+// تعيين اليوم كالأحد (0 هو الأحد في جافاسكريبت)
+ramadanStart.setDate(ramadanStart.getDate() - (ramadanStart.getDay() === 0 ? 0 : ramadanStart.getDay()));
+
+// متغير يمثل التاريخ الحالي في التطبيق
+let currentDate = new Date(ramadanStart);
+
+// تحديث اقتباس اليوم
+function updateDailyQuote() {
+  // حساب يوم رمضان
+  const dayOfRamadan = getDayOfRamadan(currentDate);
+  if (dayOfRamadan > 0 && dayOfRamadan <= 30) {
+    // استخدام اقتباس مختلف لكل عشرة أيام
+    const quoteIndex = Math.min(Math.floor((dayOfRamadan - 1) / 10), ramadanQuotes.length - 1);
+    document.getElementById('dailyQuote').textContent = ramadanQuotes[quoteIndex];
+  } else {
+    // استخدام الاقتباس الأول إذا كنا خارج رمضان
+    document.getElementById('dailyQuote').textContent = ramadanQuotes[0];
+  }
+}
+
+// حساب اليوم من رمضان
+function getDayOfRamadan(date) {
+  const timeDiff = date.getTime() - ramadanStart.getTime();
+  const dayDiff = Math.floor(timeDiff / (24 * 60 * 60 * 1000)) + 1;
+  return dayDiff;
+}
+
+// تحديث عرض التاريخ والمعلومات
+function updateDateDisplay() {
+  const dayOfRamadan = getDayOfRamadan(currentDate);
+  
+  // اليوم بالعربية
+  const arabicDay = arabicDays[currentDate.getDay()];
+  
+  // تحديث عرض اليوم من رمضان
+  if (dayOfRamadan > 0 && dayOfRamadan <= 30) {
+    document.getElementById('ramadanDay').textContent = `يوم ${dayOfRamadan} من رمضان`;
+    document.getElementById('currentDateDisplay').textContent = `${arabicDay}: ${dayOfRamadan} رمضان`;
+  } else if (dayOfRamadan <= 0) {
+    // قبل رمضان (شعبان)
+    const shabanDay = 30 + dayOfRamadan - 1; // اليوم من شعبان
+    document.getElementById('ramadanDay').textContent = `${shabanDay} شعبان`;
+    document.getElementById('currentDateDisplay').textContent = `${arabicDay}: ${shabanDay} شعبان`;
+  } else {
+    // بعد رمضان (شوال)
+    const shawwalDay = dayOfRamadan - 30;
+    document.getElementById('ramadanDay').textContent = `${shawwalDay} شوال`;
+    document.getElementById('currentDateDisplay').textContent = `${arabicDay}: ${shawwalDay} شوال`;
+  }
+  
+  // تحديث الاقتباس اليومي
+  updateDailyQuote();
+  
+  // استرجاع حالة صناديق الاختيار للتاريخ المحدد
+  loadCheckboxStates();
+}
+
+// الحصول على رمز التاريخ للتخزين
+function getDateKey() {
+  return `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}`;
+}
 
 // حساب نسبة الإنجاز
 function updateProgress() {
@@ -459,26 +501,23 @@ function updateProgress() {
   document.getElementById('progressText').textContent = `${progressPercentage}% - ${completedTasks} من ${totalTasks} مهمة مكتملة`;
 }
 
-// الحصول على تاريخ اليوم كسلسلة
-function getDateString() {
-  const now = new Date();
-  return `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
-}
-
 // حفظ حالة صناديق الاختيار في التخزين المحلي
 function saveCheckboxStates() {
-  const dateString = getDateString();
+  const dateKey = getDateKey();
   const checkboxStates = {};
+  
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkboxStates[checkbox.id] = checkbox.checked;
   });
-  localStorage.setItem(`ramadanTasks_${dateString}`, JSON.stringify(checkboxStates));
+  
+  localStorage.setItem(`ramadanTasks_${dateKey}`, JSON.stringify(checkboxStates));
 }
 
 // استعادة حالة صناديق الاختيار من التخزين المحلي
 function loadCheckboxStates() {
-  const dateString = getDateString();
-  const savedStates = localStorage.getItem(`ramadanTasks_${dateString}`);
+  const dateKey = getDateKey();
+  const savedStates = localStorage.getItem(`ramadanTasks_${dateKey}`);
+  
   if (savedStates) {
     const checkboxStates = JSON.parse(savedStates);
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
@@ -494,103 +533,36 @@ function loadCheckboxStates() {
       checkbox.checked = false;
     });
   }
+  
   // تحديث شريط التقدم بعد استعادة الحالات
   updateProgress();
 }
 
-// معالجة أزرار التنقل بين الأيام
-function setupDateNavigation() {
-  const today = new Date();
-  let currentDate = new Date();
-  
-  // تحديث عرض التاريخ
-  function updateDateDisplay() {
-    // الحصول على الشهر الهجري - هنا سنضع الحالة الثابتة حسب طلب المستخدم
-    let hijriDisplay = "";
-    
-    // إذا كان اليوم هو نفس اليوم الحالي
-    if (currentDate.getDate() === today.getDate() &&
-        currentDate.getMonth() === today.getMonth() &&
-        currentDate.getFullYear() === today.getFullYear()) {
-      document.getElementById('ramadanDay').textContent = "30 شعبان";
-      // لليوم الحالي (30 شعبان)
-      document.getElementById('currentDateDisplay').textContent = "اليوم: 30 شعبان";
-    }
-    // إذا كان اليوم هو غد
-    else if (currentDate.getDate() === today.getDate() + 1 &&
-             currentDate.getMonth() === today.getMonth() &&
-             currentDate.getFullYear() === today.getFullYear()) {
-      document.getElementById('ramadanDay').textContent = "يوم 1 من رمضان";
-      // لغد (1 رمضان)
-      document.getElementById('currentDateDisplay').textContent = "الأحد: 1 رمضان";
-    }
-    // للأيام الأخرى
-    else {
-      // حساب اليوم في رمضان (تقريبي - للأيام التالية)
-      const startOfRamadan = new Date(today);
-      startOfRamadan.setDate(today.getDate() + 1); // غدا هو أول رمضان
-      const dayDiff = Math.floor((currentDate - startOfRamadan) / (24 * 60 * 60 * 1000)) + 1;
-      
-      if (dayDiff > 0 && dayDiff <= 30) {
-        document.getElementById('ramadanDay').textContent = `يوم ${dayDiff} من رمضان`;
-        const options = { weekday: 'long' };
-        const weekday = currentDate.toLocaleDateString('ar-SA', options);
-        document.getElementById('currentDateDisplay').textContent = `${weekday}: ${dayDiff} رمضان`;
-      } else if (dayDiff <= 0) {
-        // للأيام السابقة (قبل رمضان)
-        const daysBeforeRamadan = Math.abs(dayDiff) + 1;
-        const shabanDay = 30 - daysBeforeRamadan;
-        document.getElementById('ramadanDay').textContent = `${shabanDay} شعبان`;
-        const options = { weekday: 'long' };
-        const weekday = currentDate.toLocaleDateString('ar-SA', options);
-        document.getElementById('currentDateDisplay').textContent = `${weekday}: ${shabanDay} شعبان`;
-      } else {
-        // بعد رمضان
-        document.getElementById('ramadanDay').textContent = `خارج شهر رمضان`;
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('currentDateDisplay').textContent = 'اليوم: ' + currentDate.toLocaleDateString('ar-SA', options);
-      }
-    }
-    
-    // استرجاع حالة صناديق الاختيار للتاريخ المحدد
-    loadCheckboxStates();
-  }
-  
-  // زر اليوم السابق
+// تهيئة عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+  // إضافة مستمعي الأحداث للأزرار
   document.getElementById('previousDay').addEventListener('click', function() {
     currentDate.setDate(currentDate.getDate() - 1);
     updateDateDisplay();
   });
   
-  // زر اليوم التالي
   document.getElementById('nextDay').addEventListener('click', function() {
     currentDate.setDate(currentDate.getDate() + 1);
     updateDateDisplay();
   });
   
-  // زر اليوم الحالي
   document.getElementById('today').addEventListener('click', function() {
-    currentDate = new Date(today);
+    currentDate = new Date(ramadanStart);
     updateDateDisplay();
   });
-  
-  // تحديث العرض الأولي
-  updateDateDisplay();
-}
-
-// تهيئة عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', function() {
-  // استخدام أول اقتباس وهو الاقتباس المطلوب
-  document.getElementById('dailyQuote').textContent = ramadanQuotes[0];
-  setupDateNavigation();
   
   // إضافة مستمعي الأحداث لصناديق الاختيار
   document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', updateProgress);
   });
   
-  // استرجاع حالات صناديق الاختيار المحفوظة
-  loadCheckboxStates();
+  // تحديث العرض الأولي
+  updateDateDisplay();
 });
 </script>
 </body>
