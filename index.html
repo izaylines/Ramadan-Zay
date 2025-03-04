@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الأعمال اليومية لشهر رمضان</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+:root{
+--primary-color: #3a7765;
+--secondary-color: #f8c687;
+--background-color: #f9f7f2;
+--text-color: #333;
+--border-color: #d4c8b4;
+--success-color: #5cb85c;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body{
+font-family: 'Tajawal', sans-serif;
+background-color: var(--background-color);
+color: var(--text-color);
+line-height: 1.6;
+}
+.container{
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+}
+header{
+text-align: center;
+padding: 30px 0;
+background: linear-gradient(135deg, var(--primary-color), #2c5a4c);
+color: white;
+border-radius: 15px;
+margin-bottom: 30px;
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+position: relative;
+overflow: hidden;
+}
+header::before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80' fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M11 0l5 20H6L0 0h11zm0 80l5-20H6L0 80h11zm63 0l5-20h-10l-5 20h10zm0-80l5 20h-10L64 0h10zm-30 0v20h10L49 0h-5zm0 80v-20h10l-5 20h-5zM32 0v20h-10l5-20h5zm0 80v-20h-10l5 20h5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+opacity: 0.2;
+}
+header h1{
+font-size: 32px;
+margin-bottom: 10px;
+}
+header p{
+font-size: 18px;
+opacity: 0.9;
+}
+.date-display{
+background-color: white;
+border-radius: 10px;
+padding: 15px;
+margin-bottom: 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.date-display h2{
+font-size: 22px;
+color: var(--primary-color);
+}
+.date-controls button{
+background-color: var(--primary-color);
+color: white;
+border: none;
+border-radius: 5px;
+padding: 8px 15px;
+cursor: pointer;
+font-family: 'Tajawal', sans-serif;
+margin-right: 5px;
+transition: background-color 0.3s;
+}
+.date-controls button:hover{
+background-color: #2c5a4c;
+}
+.sections{
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 20px;
+}
+.section{
+background-color: white;
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+border-right: 4px solid var(--primary-color);
+transition: transform 0.3s, box-shadow 0.3s;
+}
+.section:hover{
+transform: translateY(-5px);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+.section h3{
+color: var(--primary-color);
+margin-bottom: 15px;
+display: flex;
+align-items: center;
+font-size: 20px;
+}
+.section h3 svg{
+margin-left: 10px;
+}
+.section-content{
+padding-top: 10px;
+}
+.task{
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+padding-bottom: 10px;
+border-bottom: 1px solid #f0f0f0;
+}
+.task:last-child{
+margin-bottom: 0;
+padding-bottom: 0;
+border-bottom: none;
+}
+.task input[type="checkbox"]{
+margin-left: 10px;
+width: 20px;
+height: 20px;
+accent-color: var(--primary-color);
+cursor: pointer;
+}
+.task label{
+font-size: 16px;
+cursor: pointer;
+flex-grow: 1;
+transition: color 0.3s;
+}
+.task input[type="checkbox"]:checked + label{
+text-decoration: line-through;
+color: #888;
+}
+.progress-container{
+background-color: white;
+border-radius: 10px;
+padding: 20px;
+margin-top: 30px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.progress-container h2{
+color: var(--primary-color);
+margin-bottom: 15px;
+text-align: center;
+}
+.progress-bar{
+height: 20px;
+background-color: #f0f0f0;
+border-radius: 10px;
+overflow: hidden;
+margin-bottom: 10px;
+}
+.progress{
+height: 100%;
+background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+width: 0%;
+transition: width 0.5s ease;
+}
+.progress-text{
+text-align: center;
+font-weight: 500;
+}
+footer{
+text-align: center;
+margin-top: 50px;
+padding: 20px 0;
+color: #888;
+border-top: 1px solid var(--border-color);
+}
+.final-message{
+text-align: center;
+margin-top: 30px;
+padding: 15px;
+font-size: 18px;
+color: var(--primary-color);
+font-weight: 500;
+background-color: rgba(248, 198, 135, 0.2);
+border-radius: 10px;
+}
+@media (max-width: 768px){
+.sections{
+grid-template-columns: 1fr;
+}
+header h1{
+font-size: 24px;
+}
+.date-display{
+flex-direction: column;
+gap: 10px;
+}
+}
+.icon{
+color: var(--primary-color);
+margin-left: 8px;
+}
+.section-divider{
+background-color: var(--secondary-color);
+opacity: 0.3;
+height: 2px;
+width: 100%;
+margin: 10px 0;
+border-radius: 1px;
+}
+.decoration{
+position: absolute;
+opacity: 0.1;
+}
+.decoration-1{
+top: 20px;
+right: 20px;
+font-size: 60px;
+transform: rotate(10deg);
+}
+.decoration-2{
+bottom: 20px;
+left: 20px;
+font-size: 40px;
+transform: rotate(-5deg);
+}
+.ramadan-counter{
+position: absolute;
+top: 20px;
+left: 20px;
+background-color: var(--secondary-color);
+color: var(--primary-color);
+font-weight: bold;
+padding: 5px 15px;
+border-radius: 20px;
+font-size: 14px;
+}
+.lantern{
+display: inline-block;
+margin: 0 20px;
+opacity: 0.7;
+}
+.quote-container{
+background-color: rgba(255, 255, 255, 0.1);
+border-radius: 10px;
+padding: 15px;
+margin-top: 15px;
+font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="ramadan-counter" id="ramadanDay">3 رمضان</div>
+<span class="decoration decoration-1">☪</span>
+<span class="decoration decoration-2">☪</span>
+<h1>الأعمال اليومية لشهر رمضان</h1>
+<p>سجل أعمالك وعباداتك اليومية في هذا الشهر الفضيل</p>
+<div class="quote-container">
+<p id="dailyQuote">قال الإمام الصادق عليه السلام: (للصائم فرحتان فرحة عند إفطاره وفرحة عند لقاء ربه)</p>
+</div>
+</header>
+<div class="date-display">
+<h2 id="currentDateDisplay">اليوم: الثلاثاء 3 رمضان</h2>
+<div class="date-controls">
+<button id="previousDay">اليوم السابق</button>
+<button id="nextDay">اليوم التالي</button>
+<button id="today">اليوم</button>
+</div>
+</div>
+<div class="sections">
+<!-- القسم الأول: الأعمال النهارية -->
+<div class="section">
+<h3>
+<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="5"></circle>
+<line x1="12" y1="1" x2="12" y2="3"></line>
+<line x1="12" y1="21" x2="12" y2="23"></line>
+<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+<line x1="1" y1="12" x2="3" y2="12"></line>
+<line x1="21" y1="12" x2="23" y2="12"></line>
+<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+</svg>
+الأعمال النهارية
+</h3>
+<div class="section-divider"></div>
+<div class="section-content">
+<div class="task">
+<input type="checkbox" id="quran" data-section="day">
+<label for="quran">قراءة جزء من القرآن</label>
+</div>
+<div class="task">
+<input type="checkbox" id="sadaqah" data-section="day">
+<label for="sadaqah">الصدقة</label>
+</div>
+<div class="task">
+<input type="checkbox" id="tasbih" data-section="day">
+<label for="tasbih">التسبيحات</label>
+</div>
+<div class="task">
+<input type="checkbox" id="dayDua" data-section="day">
+<label for="dayDua">الأدعية النهارية</label>
+</div>
+<div class="task">
+<input type="checkbox" id="istighfar" data-section="day">
+<label for="istighfar">الاستغفار ١٠٠ مرة</label>
+</div>
+<div class="task">
+<input type="checkbox" id="salawat" data-section="day">
+<label for="salawat">الصلاة على محمد وآل محمد</label>
+</div>
+<div class="task">
+<input type="checkbox" id="qadr" data-section="day">
+<label for="qadr">سورة القدر</label>
+</div>
+</div>
+</div>
+<!-- القسم الثاني: أعمال الليل -->
+<div class="section">
+<h3>
+<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+أعمال الليل
+</h3>
+<div class="section-divider"></div>
+<div class="section-content">
+<div class="task">
+<input type="checkbox" id="iftitah" data-section="night">
+<label for="iftitah">دعاء الافتتاح</label>
+</div>
+<div class="task">
+<input type="checkbox" id="yaodat" data-section="night">
+<label for="yaodat">دعاء يا عدتي</label>
+</div>
+<div class="task">
+<input type="checkbox" id="dukhan" data-section="night">
+<label for="dukhan">سورة الدخان</label>
+</div>
+</div>
+</div>
+<!-- القسم الثالث: أعمال السحر -->
+<div class="section">
+<h3>
+<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M17 18a5 5 0 0 0-10 0"></path>
+<line x1="12" y1="2" x2="12" y2="9"></line>
+<line x1="4.22" y1="10.22" x2="5.64" y2="11.64"></line>
+<line x1="1" y
+<line x1="1" y1="18" x2="3" y2="18"></line>
+<line x1="21" y1="18" x2="23" y2="18"></line>
+<line x1="18.36" y1="11.64" x2="19.78" y2="10.22"></line>
+<line x1="23" y1="22" x2="1" y2="22"></line>
+<polyline points="8 6 12 2 16 6"></polyline>
+</svg>
+أعمال السحر
+</h3>
+<div class="section-divider"></div>
+<div class="section-content">
+<div class="task">
+<input type="checkbox" id="saharDua" data-section="sahar">
+<label for="saharDua">دعاء السحر</label>
+</div>
+<div class="task">
+<input type="checkbox" id="rakaat" data-section="sahar">
+<label for="rakaat">صلاة ركعتين</label>
+</div>
+<div class="task">
+<input type="checkbox" id="abuHamza" data-section="sahar">
+<label for="abuHamza">دعاء أبو حمزة الثمالي</label>
+</div>
+<div class="task">
+<input type="checkbox" id="bahaa" data-section="sahar">
+<label for="bahaa">دعاء البهاء</label>
+</div>
+</div>
+</div>
+<!-- القسم الرابع: الزيارات -->
+<div class="section">
+<h3>
+<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<path d="M3 12h18"></path>
+<path d="M3 6h18"></path>
+<path d="M3 18h18"></path>
+</svg>
+الزيارات
+</h3>
+<div class="section-divider"></div>
+<div class="section-content">
+<div class="task">
+<input type="checkbox" id="ashura" data-section="ziyarat">
+<label for="ashura">زيارة عاشوراء</label>
+</div>
+</div>
+</div>
+</div>
+<div class="progress-container">
+<h2>مستوى الإنجاز اليومي</h2>
+<div class="progress-bar">
+<div class="progress" id="progressBar"></div>
+</div>
+<p class="progress-text" id="progressText">0%</p>
+</div>
+<div class="final-message">
+تقبل الله منكم صالح الاعمال ورزقكم شفاعة محمد وآل محمد
+</div>
+<footer>
+<p>بُني هذا الموقع كوسيلة للمساعدة في تنظيم الأعمال اليومية في شهر رمضان المبارك</p>
+<div>
+<span class="lantern"></span>
+<span>رمضان كريم</span>
+<span class="lantern"></span>
+</div>
+</footer>
+</div>
+<script>
+// تحديد بداية شهر رمضان (الأحد 2 مارس 2025)
+const ramadanStart = new Date(2025, 2, 2); // شهر مارس هو الشهر 2 (الأشهر تبدأ من 0)
+
+// الحصول على التاريخ الحالي
+function getCurrentDate() {
+    // الحصول على التاريخ الحقيقي
+    const now = new Date();
+    
+    // مقارنة التاريخ الفعلي مع تاريخ بداية رمضان
+    const diffTime = now - ramadanStart;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    
+    // إنشاء تاريخ لليوم المطلوب (3 رمضان - 4 مارس)
+    // للاختبار نستخدم التاريخ الثابت
+    const fixedDate = new Date(2025, 2, 4); // الثلاثاء 4 مارس 2025 (3 رمضان)
+    
+    // نستخدم التاريخ الفعلي إذا كنا في شهر رمضان، وإلا نستخدم التاريخ الثابت للاختبار
+    return fixedDate;
+}
+
+// متغير عام لتخزين التاريخ الحالي المعروض
+let currentDate = getCurrentDate();
+
+// تحديث التاريخ الحالي بناءً على الوقت الفعلي
+function updateCurrentDate() {
+    currentDate = getCurrentDate();
+    // تحديث عرض التاريخ وعناصر الصفحة
+    updateDateDisplay(currentDate);
+}
+
+// اقتباسات رمضانية
+const ramadanQuotes = [
+    "قال الإمام الصادق عليه السلام: (للصائم فرحتان فرحة عند إفطاره وفرحة عند لقاء ربه)",
+];
+
+// تحديث اقتباس اليوم
+function updateDailyQuote() {
+    const quoteIndex = Math.floor(Math.random() * ramadanQuotes.length);
+    document.getElementById('dailyQuote').textContent = ramadanQuotes[quoteIndex];
+}
+
+// حساب نسبة الإنجاز
+function updateProgress() {
+    // حفظ البيانات الحالية قبل التحديث
+    saveCheckboxStates();
+
+    // جمع جميع صناديق الاختيار
+    const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    const totalTasks = allCheckboxes.length;
+    
+    // عدد المهام المكتملة
+    let completedTasks = 0;
+    allCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            completedTasks++;
+        }
+    });
+    
+    // حساب النسبة المئوية للإنجاز
+    const progressPercentage = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+    
+    // تحديث شريط التقدم
+    document.getElementById('progressBar').style.width = `${progressPercentage}%`;
+    document.getElementById('progressText').textContent = `${progressPercentage}% - ${completedTasks} من ${totalTasks} مهمة مكتملة`;
+}
+
+// الحصول على تاريخ اليوم كسلسلة
+function getDateString(date) {
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+}
+
+// حفظ حالة صناديق الاختيار في التخزين المحلي
+function saveCheckboxStates() {
+    const dateString = getDateString(currentDate);
+    const checkboxStates = {};
+    
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkboxStates[checkbox.id] = checkbox.checked;
+    });
+    
+    localStorage.setItem(`ramadanTasks_${dateString}`, JSON.stringify(checkboxStates));
+}
+
+// استعادة حالة صناديق الاختيار من التخزين المحلي
+function loadCheckboxStates(date) {
+    const dateString = getDateString(date);
+    const savedStates = localStorage.getItem(`ramadanTasks_${dateString}`);
+    
+    if (savedStates) {
+        const checkboxStates = JSON.parse(savedStates);
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            if (checkboxStates.hasOwnProperty(checkbox.id)) {
+                checkbox.checked = checkboxStates[checkbox.id];
+            } else {
+                checkbox.checked = false;
+            }
+        });
+    } else {
+        // إعادة تعيين جميع صناديق الاختيار إذا لم تكن هناك بيانات محفوظة لهذا اليوم
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.checked = false;
+        });
+    }
+    
+    // تحديث شريط التقدم بعد استعادة الحالات
+    updateProgress();
+}
+
+// حساب يوم رمضان بناء على التاريخ
+function getRamadanDay(date) {
+    // الفرق بين تاريخ اليوم وبداية رمضان
+    const diffTime = date - ramadanStart;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    
+    // إذا كان قبل بداية رمضان
+    if (diffDays < 0) {
+        // حساب أيام شعبان المتبقية
+        return {month: "شعبان", day: 30 + diffDays + 1};
+    }
+    // إذا كان في شهر رمضان
+    else if (diffDays < 30) {
+        return {month: "رمضان", day: diffDays + 1};
+    }
+    // إذا كان بعد شهر رمضان
+    else {
+        return {month: "شوال", day: diffDays - 29};
+    }
+}
+
+// الحصول على اسم اليوم بالعربي
+function getArabicWeekday(date) {
+    const weekdays = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+    return weekdays[date.getDay()];
+}
+
+// تحديث عرض التاريخ والمعلومات المتعلقة به
+function updateDateDisplay(date) {
+    const hijriDate = getRamadanDay(date);
+    
+    // تحديث عنوان رمضان
+    if (hijriDate.month === "رمضان") {
+        document.getElementById('ramadanDay').textContent = `${hijriDate.day} رمضان`;
+    } else if (hijriDate.month === "شعبان") {
+        document.getElementById('ramadanDay').textContent = `${hijriDate.day} شعبان`;
+    } else {
+        document.getElementById('ramadanDay').textContent = `${hijriDate.day} شوال`;
+    }
+    
+    // تحديث عرض التاريخ اليومي
+    const arabicWeekday = getArabicWeekday(date);
+    document.getElementById('currentDateDisplay').textContent = `اليوم: ${arabicWeekday} ${hijriDate.day} ${hijriDate.month}`;
+    document.getElementById('currentDateDisplay').setAttribute('data-date', getDateString(date));
+    
+    // تحميل حالة صناديق الاختيار للتاريخ المحدد
+    loadCheckboxStates(date);
+}
+
+// معالجة أزرار التنقل بين الأيام
+function setupDateNavigation() {
+    // زر اليوم السابق
+    document.getElementById('previousDay').addEventListener('click', function() {
+        // ننشئ نسخة جديدة من التاريخ الحالي ونعدلها
+        const newDate = new Date(currentDate);
+        newDate.setDate(newDate.getDate() - 1);
+        // ثم نحدث المتغير currentDate ليشير إلى التاريخ الجديد
+        currentDate = newDate;
+        updateDateDisplay(currentDate);
+    });
+    
+    // زر اليوم التالي
+    document.getElementById('nextDay').addEventListener('click', function() {
+        // ننشئ نسخة جديدة من التاريخ الحالي ونعدلها
+        const newDate = new Date(currentDate);
+        newDate.setDate(newDate.getDate() + 1);
+        // ثم نحدث المتغير currentDate ليشير إلى التاريخ الجديد
+        currentDate = newDate;
+        updateDateDisplay(currentDate);
+    });
+    
+    // زر اليوم الحالي
+    document.getElementById('today').addEventListener('click', function() {
+        currentDate = getCurrentDate();
+        updateDateDisplay(currentDate);
+    });
+}
+
+// وظيفة للتحقق من الوقت وتحديث التاريخ عند منتصف الليل
+function checkMidnight() {
+    const now = new Date();
+    
+    // إذا كانت الساعة 12 صباحاً بالضبط
+    if (now.getHours() === 0 && now.getMinutes() === 0) {
+        updateCurrentDate();
+    }
+    
+    // التحقق كل دقيقة
+    setTimeout(checkMidnight, 60000);
+}
+
+// تهيئة عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', function() {
+    // تعيين الاقتباس الأول
+    updateDailyQuote();
+    
+    // تحديث التاريخ
+    updateCurrentDate();
+    
+    // إعداد أزرار التنقل
+    setupDateNavigation();
+    
+    // إضافة مستمعي الأحداث لصناديق الاختيار
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', updateProgress);
+    });
+    
+    // بدء التحقق من منتصف الليل
+    checkMidnight();
+});
+</script>
+</body>
+</html>
