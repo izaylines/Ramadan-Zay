@@ -643,6 +643,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // بدء التحقق من منتصف الليل
     checkMidnight();
 });
+    <title>تغيير اليوم تلقائيًا</title>
+        function checkDayChange() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // التحقق إذا كان الوقت تمامًا 12:00:00 صباحًا
+            if (hours === 0 && minutes === 0 && seconds === 0) {
+                // هنا يمكنك إضافة الإجراءات التي تريد تنفيذها عند تغيير اليوم
+                
+                // مثال: يمكنك إضافة وظائف مثل:
+                // - تحديث قاعدة البيانات
+                // - إعادة تعيير بعض المتغيرات
+                // - إرسال إشعار
+                // - أي إجراء تريده عند بداية اليوم الجديد
+            }
+        }
+
+        // التحقق كل ثانية
+        setInterval(checkDayChange, 1000);
 </script>
 </body>
 </html>
